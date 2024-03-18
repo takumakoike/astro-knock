@@ -1,6 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const todoList = ["サイト構築、公開","認証機能","データベース連携","ワードプレス連携","マイクロcms連携","スプレッドシート連携","ダッシュボード作成","予約システム構築","csv吐き出し","PDF作成機能"]
+const todoList = [
+	{title: "サイト構築、公開", link:""},
+	{title: "認証機能", link:""},
+	{title: "データベース連携", link:""},
+	{title: "ワードプレス連携", link:""},
+	{title: "マイクロcms連携", link:""},
+	{title: "スプレッドシート連携", link:""},
+	{title: "ダッシュボード作成", link:""},
+	{title: "予約システム構築", link:"/reservation"},
+	{title: "csv吐き出し", link:""},
+	{title: "PDF作成機能", link:""},
+	{title: "ビュートランジション", link:"/page02"},
+	]
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,12 +24,11 @@ const todoList = ["サイト構築、公開","認証機能","データベース�
 			<ul class="mt-3">
 				{todoList.map((list) => (
 					<li class="list-disc flex">
-						<a href="" class="w-full">{list}</a>
+						<a href={list.link} class="w-full text-blue-800 underline">{list.title}</a>
 					</li>
 				))}
 			</ul>
 		</div>
-		<a href="/page02" class="text-blue-500">Page02</a>
 
 		<section>
 			<h2 class="text-2xl font-bold text-center">更新情報</h2>
