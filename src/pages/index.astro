@@ -11,8 +11,8 @@ const todoList = ["サイト構築、公開","認証機能","データベース�
 			<h2 class="text-2xl">具体的に取り組んでいくこと</h2>
 			<ul class="mt-3">
 				{todoList.map((list) => (
-					<li class="list-disc">
-						<a href="">{list}</a>
+					<li class="list-disc flex">
+						<a href="" class="w-full">{list}</a>
 					</li>
 				))}
 			</ul>
@@ -76,5 +76,8 @@ const todoList = ["サイト構築、公開","認証機能","データベース�
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+	li>a:hover{
+		color: blue;
 	}
 </style>
