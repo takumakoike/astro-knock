@@ -1,0 +1,12 @@
+---
+import {todoList} from "../pages/index.astro";
+---
+<nav class="container-fluid bg-slate-200 p-2 mb-20">
+    <ul class="flex gap-2 flex-wrap">
+        {todoList.map((list) => (
+            <li class="flex">
+                <a href={list.link} class="w-full text-blue-800 underline">{list.title}</a>
+            </li>
+        ))}
+    </ul>
+</nav>
