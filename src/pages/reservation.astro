@@ -1,10 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro"
+
 ---
 
 <Layout title="予約システム連携">
+    <div class="container mx-auto mb-10">
+        <h2 class="text-xl font-bold">予約システム連携</h2>
+        <div>
+            <h3 class="font-bold text-red-500">詳細</h3>
+            <p>表示：Googleカレンダーを埋め込み（iframe）</p>
+            <p>データ登録フロントエンド：Astro側でFormタグを用意して送信</p>
+            <p>データ登録バックエンド：Typescriptで実装</p>
+        </div>
+    </div>
     <div class="container mx-auto flex justify-center">
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&bgcolor=%23ffffff&showTz=0&showCalendars=0&showPrint=0&showTitle=0&src=YWVlN2NmMTY3ODAyNzhhZjdjNGJkOThiNmVhMjVlMGY4ODVjMTQwOGRlMjI5MGIxNzY3YTVmZTYzNzk0NTMxZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F4511E" style="border-width:0" height="600"></iframe>
+    </div>
+    <div class="form mb-40 container mx-auto mt-6">
+        <form method="post" action="../api/register.ts">
+            <div class="">
+                <label>
+                    Username:
+                    <input type="text" name="username" class="border border-1"/>
+            </div>
+            </label>
+            <div class="">
+                <label>
+                    Email:
+                    <input type="email" name="email" class="border border-1"/>
+            </div>
+            </label>
+            <div class="">
+                <label>
+                    Password:
+                    <input type="password" name="password" class="border border-1"/>
+            </div>
+            </label>
+            <button>Submit</button>
+        </form>
     </div>
 </Layout>
 

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 export const todoList = [
+	{title: "トップ", link:"/"},
 	{title: "サイト構築、公開", link:""},
 	{title: "認証機能", link:""},
 	{title: "データベース連携", link:""},
@@ -13,6 +14,12 @@ export const todoList = [
 	{title: "PDF作成機能", link:""},
 	{title: "ビュートランジション", link:"/page02"},
 	]
+
+const update_contents = [
+	{date: "2024.03.18", text:"ページトランジションにViewtransition機能を追加しました"},
+	{date:"2024.03.18",text:"予約機能ページにGoogleカレンダー呼び出しました"},
+	{},
+]
 ---
 
 <Layout title="Welcome to Astro.">
@@ -34,13 +41,15 @@ export const todoList = [
 			<h2 class="text-2xl font-bold text-center">更新情報</h2>
 			<dl>
 				<div>
-					<dt>日付</dt>
+					<dt class=" w-24">日付</dt>
 					<dd>更新内容</dd>
-				</div>
-				<div>
-					<dt>2024.03.18</dt>
-					<dd>ページトランジションに&lt;Viewtransition&gt;を追加しました</dd>
-				</div>
+				</div>			
+				{update_contents.map((content) => (
+					<div>
+						<dt class="w-24">{content.date}</dt>
+						<dd>{content.text}</dd>
+					</div>
+				))}
 			</dl>
 		</section>
 	</section>
